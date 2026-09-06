@@ -1,0 +1,42 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-09-06 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "document_type",
+  "enabled",
+  "column_break_1",
+  "auto_apply",
+  "submit_journal_entry",
+  "section_defaults",
+  "default_template",
+  "column_break_2",
+  "remarks"
+ ],
+ "fields": [
+  {"fieldname": "document_type", "fieldtype": "Link", "options": "DocType", "in_list_view": 1, "columns": 3, "label": "Document Type", "reqd": 1},
+  {"fieldname": "enabled", "fieldtype": "Check", "in_list_view": 1, "columns": 1, "label": "Enabled", "default": "1"},
+  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+  {"fieldname": "auto_apply", "fieldtype": "Check", "in_list_view": 1, "columns": 1, "label": "Auto Apply", "description": "Tick 'Apply Additional Charges' automatically on new documents."},
+  {"fieldname": "submit_journal_entry", "fieldtype": "Check", "in_list_view": 1, "columns": 1, "label": "Auto Submit JE", "default": "1", "description": "Uncheck to leave the Journal Entry in draft for review."},
+  {"fieldname": "section_defaults", "fieldtype": "Section Break"},
+  {"fieldname": "default_template", "fieldtype": "Link", "options": "NeoCharge Template", "in_list_view": 1, "columns": 2, "label": "Default Template"},
+  {"fieldname": "column_break_2", "fieldtype": "Column Break"},
+  {"fieldname": "remarks", "fieldtype": "Small Text", "label": "Remarks"}
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-09-06 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Charges",
+ "name": "NeoCharge DocType Config",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
