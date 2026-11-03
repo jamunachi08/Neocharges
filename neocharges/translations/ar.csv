@@ -1,0 +1,111 @@
+Additional Charges,رسوم إضافية
+Apply Additional Charges,تطبيق الرسوم الإضافية
+Charge Lines,بنود الرسوم
+Charge Template,قالب الرسوم
+Charges Journal Entry,قيد اليومية للرسوم
+Debit Account,حساب مدين
+Credit Account,حساب دائن
+Description,الوصف
+Description (Arabic),الوصف بالعربية
+Amount,المبلغ
+Party Type,نوع الطرف
+Party,الطرف
+Party Side,جهة الطرف
+Cost Center,مركز التكلفة
+Project,المشروع
+Remarks,ملاحظات
+Enable Additional Charges,تفعيل الرسوم الإضافية
+Require Cost Center,إلزامية مركز التكلفة
+Default Cost Center,مركز التكلفة الافتراضي
+Enabled Document Types,أنواع المستندات المفعلة
+Document Type,نوع المستند
+Enabled,مفعل
+Auto Apply,تطبيق تلقائي
+Auto Submit JE,ترحيل القيد تلقائياً
+Default Template,القالب الافتراضي
+Template Name,اسم القالب
+Applicable For,ينطبق على
+Sales,المبيعات
+Purchase,المشتريات
+Both,كلاهما
+Disabled,معطل
+Default Amount,المبلغ الافتراضي
+Basis,الأساس
+Percentage,نسبة مئوية
+Percentage On,النسبة على
+Net Total,الإجمالي الصافي
+Grand Total,الإجمالي الكلي
+Total Taxes and Charges,إجمالي الضرائب والرسوم
+Posting Mode,طريقة الترحيل
+Journal Entry,قيد يومية
+Inline with Document GL,ضمن قيود المستند
+Add To,يضاف إلى
+Distribute Based On,التوزيع على أساس
+Account Head,الحساب الرئيسي
+Valuation,التقييم
+Valuation and Total,التقييم والإجمالي
+Total,الإجمالي
+Quantity,الكمية
+Amount,المبلغ
+None,لا شيء
+Item Discount,خصم الصنف
+Item Discounts,خصومات الأصناف
+Enable Item Discounts,تفعيل خصومات الأصناف
+Gross Rate,السعر قبل الخصم
+Discount 1 (%),الخصم 1 (%)
+Discount 2 (%),الخصم 2 (%)
+Applied to the balance after Discount 1.,يُطبق على الرصيد بعد الخصم 1.
+Extra Discount per Unit,خصم إضافي للوحدة
+Discount Reason,سبب الخصم
+Effective Discount (%),نسبة الخصم الفعلية (%)
+Discount per Unit,الخصم للوحدة
+Line Discount,خصم السطر
+Total Item Discount,إجمالي خصم الأصناف
+Rate before item discount. Defaults to the price list rate.,السعر قبل خصم الصنف. الافتراضي هو سعر قائمة الأسعار.
+NeoDiscount Reason,سبب الخصم
+Reason Name,اسم السبب
+ZATCA Reason Code,رمز السبب لدى زاتكا
+Reason Text (English),نص السبب (إنجليزي)
+Reason Text (Arabic),نص السبب (عربي)
+Maximum Discount (%),الحد الأقصى للخصم (%)
+Discount Accounts,حسابات الخصم
+Discount Account,حساب الخصم
+Discount Rounding,تقريب الخصم
+Allow 100% Line Discount,السماح بخصم 100% على السطر
+Require Discount Reason,إلزام سبب الخصم
+Default Discount Reason,سبب الخصم الافتراضي
+Item Discount Document Types,أنواع المستندات لخصم الأصناف
+Discount Authority,صلاحية الخصم
+Apply Authority To,تطبيق الصلاحية على
+Limits by Role,الحدود حسب الدور
+Selling documents,مستندات البيع
+All documents,جميع المستندات
+ZATCA,زاتكا
+ZATCA Integration,التكامل مع زاتكا
+Several Reasons on One Invoice,أكثر من سبب في فاتورة واحدة
+Use the reason with the largest discount,استخدام السبب صاحب أكبر خصم
+Block saving,منع الحفظ
+Reason Text Language,لغة نص السبب
+Block Tax-Table Charges on ZATCA Invoices,منع رسوم جدول الضرائب في فواتير زاتكا
+Line Discount Flag Field,حقل علامة خصم السطر
+Reason Code Field,حقل رمز السبب
+Reason Text Field,حقل نص السبب
+ZATCA Discount Preview,معاينة الخصم لزاتكا
+Discount Above Your Authority,الخصم يتجاوز صلاحيتك
+Item Discount Conflict,تعارض في خصم الصنف
+Base Amount,المبلغ الأساسي
+Allowance,الخصم
+Price Amount,السعر
+Line Extension,إجمالي السطر
+Check,التحقق
+ZATCA rounding,تقريب زاتكا
+"Row {0}: {1}","السطر {0}: {1}"
+set a Gross Rate first,أدخل السعر قبل الخصم أولاً
+discount percentages must be between 0 and 100,يجب أن تكون نسب الخصم بين 0 و 100
+the discounts add up to more than the gross rate,مجموع الخصومات أكبر من السعر قبل الخصم
+this discount brings the rate to zero,هذا الخصم يجعل السعر صفراً
+"{0}: select a Discount Reason.","{0}: اختر سبب الخصم."
+"{0}: set a Gross Rate before applying a discount.","{0}: أدخل السعر قبل الخصم قبل تطبيق الخصم."
+"{0}: the discounts add up to more than the gross rate.","{0}: مجموع الخصومات أكبر من السعر قبل الخصم."
+"Your discount authority is {0}%. These lines exceed it:","صلاحية الخصم لديك {0}%. هذه الأسطر تتجاوزها:"
+Ask a user with a higher limit to submit this document.,اطلب من مستخدم بصلاحية أعلى اعتماد هذا المستند.
