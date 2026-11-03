@@ -1,0 +1,294 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-09-06 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "enabled",
+  "column_break_1",
+  "require_cost_center",
+  "section_defaults",
+  "default_cost_center",
+  "section_doctypes",
+  "doctype_configs",
+  "section_item_discounts",
+  "enable_item_discounts",
+  "discount_method",
+  "discount_rounding",
+  "allow_full_discount",
+  "column_break_disc_1",
+  "require_discount_reason",
+  "default_discount_reason",
+  "section_discount_doctypes",
+  "discount_doctypes",
+  "section_discount_authority",
+  "authority_scope",
+  "discount_authorities",
+  "section_zatca",
+  "zatca_vendor",
+  "zatca_integration",
+  "zatca_mixed_reasons",
+  "zatca_reason_language",
+  "block_zatca_tax_charges",
+  "zatca_check_enabled",
+  "zatca_check_on_submit",
+  "column_break_zatca",
+  "zatca_flag_field",
+  "zatca_reason_code_field",
+  "zatca_reason_field",
+  "section_help",
+  "help_html"
+ ],
+ "fields": [
+  {
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enable Additional Charges",
+   "default": "1",
+   "description": "Master switch. When off, no document posts charges."
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "require_cost_center",
+   "fieldtype": "Check",
+   "label": "Require Cost Center",
+   "default": "1",
+   "description": "Enforce a cost center on income/expense charge accounts."
+  },
+  {
+   "fieldname": "section_defaults",
+   "fieldtype": "Section Break",
+   "label": "Defaults"
+  },
+  {
+   "fieldname": "default_cost_center",
+   "fieldtype": "Link",
+   "options": "Cost Center",
+   "label": "Default Cost Center"
+  },
+  {
+   "fieldname": "section_doctypes",
+   "fieldtype": "Section Break",
+   "label": "Additional Charges Document Types"
+  },
+  {
+   "fieldname": "doctype_configs",
+   "fieldtype": "Table",
+   "options": "NeoCharge DocType Config",
+   "label": "Enabled Document Types"
+  },
+  {
+   "fieldname": "section_item_discounts",
+   "fieldtype": "Section Break",
+   "label": "Item Discounts"
+  },
+  {
+   "fieldname": "enable_item_discounts",
+   "fieldtype": "Check",
+   "label": "Enable Item Discounts",
+   "default": "1",
+   "description": "Two cascading percentages and an extra amount per unit on each item row. Results are written into ERPNext's own price list rate, discount amount and rate fields."
+  },
+  {
+   "fieldname": "discount_method",
+   "fieldtype": "Select",
+   "label": "Discount Method",
+   "options": "Keep Rate (discount on net amount)\nReduce Rate",
+   "default": "Keep Rate (discount on net amount)",
+   "description": "Keep Rate: Rate and Amount stay as entered; the discount lowers the line's net amount, VAT and income, and shows as the document's discount (ERPNext v16). Reduce Rate: the discount is taken off the Rate."
+  },
+  {
+   "fieldname": "discount_rounding",
+   "fieldtype": "Select",
+   "label": "Discount Rounding",
+   "options": "ZATCA-safe (2 decimals)\nDocument precision",
+   "default": "ZATCA-safe (2 decimals)",
+   "description": "Reduce Rate only. ZATCA-safe keeps gross rate, discount and net rate at two decimals so the e-invoice price block always reconciles."
+  },
+  {
+   "fieldname": "allow_full_discount",
+   "fieldtype": "Check",
+   "label": "Allow 100% Line Discount"
+  },
+  {
+   "fieldname": "column_break_disc_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "require_discount_reason",
+   "fieldtype": "Check",
+   "label": "Require Discount Reason",
+   "default": "1"
+  },
+  {
+   "fieldname": "default_discount_reason",
+   "fieldtype": "Link",
+   "label": "Default Discount Reason",
+   "options": "NeoDiscount Reason",
+   "description": "Filled on any discounted line without a reason."
+  },
+  {
+   "fieldname": "section_discount_doctypes",
+   "fieldtype": "Section Break",
+   "label": "Item Discount Document Types"
+  },
+  {
+   "fieldname": "discount_doctypes",
+   "fieldtype": "Table",
+   "label": "Document Types",
+   "options": "NeoDiscount DocType Config"
+  },
+  {
+   "fieldname": "section_discount_authority",
+   "fieldtype": "Section Break",
+   "label": "Discount Authority",
+   "description": "Leave empty for no limits. When filled, the user who submits must hold a role whose limit covers every discounted line. Drafts save freely."
+  },
+  {
+   "fieldname": "authority_scope",
+   "fieldtype": "Select",
+   "label": "Apply Authority To",
+   "options": "Selling documents\nAll documents",
+   "default": "Selling documents"
+  },
+  {
+   "fieldname": "discount_authorities",
+   "fieldtype": "Table",
+   "label": "Limits by Role",
+   "options": "NeoDiscount Authority"
+  },
+  {
+   "fieldname": "section_zatca",
+   "fieldtype": "Section Break",
+   "label": "ZATCA",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "zatca_vendor",
+   "fieldtype": "Select",
+   "label": "ZATCA Vendor",
+   "options": "Auto-detect\nERPGulf\nOther\nNone",
+   "default": "Auto-detect",
+   "description": "The ZATCA e-invoicing app on this site. Auto-detect recognises ERPGulf and forks that keep its fields. Other uses the field names below."
+  },
+  {
+   "fieldname": "zatca_integration",
+   "fieldtype": "Check",
+   "label": "ZATCA Integration",
+   "default": "1",
+   "description": "On Sales and POS Invoices: tick the invoice's line-discount flag, fill the discount reason code and text, and block combinations ZATCA rejects. Acts only when a ZATCA app or its fields are present."
+  },
+  {
+   "fieldname": "zatca_mixed_reasons",
+   "fieldtype": "Select",
+   "label": "Several Reasons on One Invoice",
+   "options": "Use the reason with the largest discount\nBlock saving",
+   "default": "Use the reason with the largest discount"
+  },
+  {
+   "fieldname": "zatca_reason_language",
+   "fieldtype": "Select",
+   "label": "Reason Text Language",
+   "options": "English\nArabic",
+   "default": "English"
+  },
+  {
+   "fieldname": "block_zatca_tax_charges",
+   "fieldtype": "Check",
+   "label": "Block Tax-Table Charges on ZATCA Invoices",
+   "default": "1",
+   "description": "Rejects charge lines with Add To other than None on Sales Invoices when a ZATCA app is installed. ZATCA apps read the taxes table as VAT, so a charge row there would be reported as tax."
+  },
+  {
+   "fieldname": "zatca_check_enabled",
+   "fieldtype": "Check",
+   "label": "ZATCA Pre-Submit Check",
+   "default": "1",
+   "description": "Adds View → ZATCA Check on draft Sales and POS Invoices: seller and buyer details, VAT setup, discounts and the vendor app's own conditions, before anything is submitted."
+  },
+  {
+   "fieldname": "zatca_check_on_submit",
+   "fieldtype": "Select",
+   "label": "Check on Submit",
+   "options": "Block on errors\nWarn only\nOff",
+   "default": "Block on errors",
+   "depends_on": "eval:doc.zatca_check_enabled",
+   "description": "Runs the check again when the invoice is submitted."
+  },
+  {
+   "fieldname": "column_break_zatca",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "zatca_flag_field",
+   "fieldtype": "Data",
+   "label": "Line Discount Flag Field",
+   "default": "custom_submit_line_item_discount_to_zatca",
+   "depends_on": "eval:doc.zatca_vendor==\"Other\""
+  },
+  {
+   "fieldname": "zatca_reason_code_field",
+   "fieldtype": "Data",
+   "label": "Reason Code Field",
+   "default": "custom_zatca_discount_reason_code",
+   "depends_on": "eval:doc.zatca_vendor==\"Other\""
+  },
+  {
+   "fieldname": "zatca_reason_field",
+   "fieldtype": "Data",
+   "label": "Reason Text Field",
+   "default": "custom_zatca_discount_reason",
+   "depends_on": "eval:doc.zatca_vendor==\"Other\""
+  },
+  {
+   "fieldname": "section_help",
+   "fieldtype": "Section Break",
+   "label": "Notes",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "help_html",
+   "fieldtype": "HTML",
+   "options": "<div class='text-muted small'><p><b>Additional charges</b> post a standalone, self-balancing Journal Entry referencing the source document, unless 'Add To' sends them into the document's own taxes table. Quotation, Sales Order, Supplier Quotation and Purchase Order do not post GL entries of their own: charges raised there create an accrual, and entering the same charge on the downstream invoice posts it twice.</p><p>Payable and Receivable accounts require a Party. All other account types must not carry one.</p><p><b>Item discounts, Keep Rate:</b> Rate and Amount are not changed. Each line's discount lowers its net amount through ERPNext's per-item discount, and the total shows as the document's Additional Discount on Net Total. It cannot be combined with a manually entered Additional Discount. <b>Reduce Rate:</b> the gross rate goes into Price List Rate, the discount per unit into Discount Amount and the net rate into Rate; pricing rules and margins cannot be combined with it on the same line. Item → Max Discount is enforced against the effective discount.</p><p>For discount GL postings per reason, enable Selling Settings → Enable Discount Accounting and set accounts on each Discount Reason.</p></div>"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-11-03 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Charges",
+ "name": "NeoCharges Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

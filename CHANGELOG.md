@@ -1,0 +1,82 @@
+# Changelog
+
+## 2.2.0 — 2026-11-03
+
+### Added
+- ZATCA Vendor setting: Auto-detect, ERPGulf, Other or None. Auto-detect
+  recognises ERPGulf and forks that kept its field layout. The vendor decides
+  which invoice fields the discount layer fills and which vendor conditions
+  the check reproduces.
+- ZATCA pre-submit check on draft Sales and POS Invoices (View → ZATCA
+  Check): applicability, seller VAT number and the address the vendor will
+  actually report, buyer details, line sanity, VAT setup, discounts, returns
+  and NeoCharges rows. Findings are labelled ZATCA, Vendor or NeoCharges.
+- Check on Submit: Block on errors (default), Warn only, or Off. Never blocks
+  when no ZATCA app is configured.
+- Check status shown as a form indicator and stored on the invoice; any save
+  resets it.
+- Rule tests against an ERPGulf-shaped invoice, run without a site.
+
+## 2.1.0 — 2026-11-03
+
+### Added
+- Discount Method setting. **Keep Rate (discount on net amount)**, the default
+  on ERPNext v16: Rate and Amount stay as entered; each line's discount goes
+  into ERPNext's per-item discount field, so the line's net amount, VAT and
+  income are discounted and the total shows as the document's Additional
+  Discount on Net Total. **Reduce Rate** keeps the 2.0 behaviour.
+- Discount Amount (Line): a fixed amount off the whole line. Exact under Keep
+  Rate; under Reduce Rate it is converted per unit with a notice when it does
+  not divide evenly.
+- Net Rate after Discount on each row.
+- ZATCA, Keep Rate: discount sent as the document-level allowance with the
+  reason fields filled; invoices mixing VAT categories are blocked; the
+  preview shows the document allowance.
+- Unit tests for Keep Rate, including ERPNext's per-stock-unit storage.
+
+### Fixed
+- Gross Rate was empty until a discount was typed. It is now filled from the
+  row when the item is entered, when the rate changes, and on load.
+
+### Changed
+- Keep Rate cannot be combined with a manually entered Additional Discount on
+  the same document (ERPNext clears per-item discounts when the header
+  discount is edited); saving stops with an explanation.
+
+## 2.0.0 — 2026-11-03
+
+### Added
+- Item discounts on Quotation, Sales Order, Delivery Note, Sales Invoice, POS
+  Invoice and the buying chain: Discount 1 %, cascading Discount 2 %, extra
+  amount per unit, reason, computed effective %, discount per unit and line
+  discount; document total of item discounts.
+- Results written into ERPNext's native price list rate, discount amount and
+  rate, so totals, VAT, returns, discount accounting and ZATCA XML builders
+  pick them up unchanged.
+- ZATCA-safe rounding (default): gross, discount and net at two decimals with
+  gross = net + discount exact.
+- NeoDiscount Reason with UNTDID 5189 codes (19 seeded, English and Arabic),
+  optional maximum %, and per-company discount accounts.
+- Discount authority by role, enforced at submit.
+- Item → Max Discount enforced against the effective discount.
+- ZATCA layer: sets the invoice line-discount flag and reason fields, blocks
+  nominal invoices with line discounts and discounts without a reason code,
+  warns on VAT-inclusive rounding drift and on POS Invoices whose Company flag
+  is off. Configurable field names.
+- ZATCA Discount Preview dialog on Sales and POS Invoices.
+- `neocharges.discounts.zatca.get_line_allowances()` for ZATCA builders that
+  want per-line reasons.
+- Guard against Add-To charge rows on Sales Invoices when a ZATCA app is
+  installed.
+- Unit tests for the discount arithmetic; verify_tree checks for the discount
+  module's design constraints.
+
+### Fixed
+- Removing every charge line left the app's tax rows on the document.
+- Payment schedule and in-words fields were not refreshed after the app
+  changed the taxes table.
+
+### Changed
+- Frappe/ERPNext range widened to v15 and v16 (`>=15.0.0,<17.0.0`).
+- New module `Discounts`; settings page reorganised into Additional Charges,
+  Item Discounts, Discount Authority and ZATCA sections.
