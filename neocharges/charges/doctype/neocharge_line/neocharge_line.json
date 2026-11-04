@@ -1,0 +1,269 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-09-06 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "charge_description",
+  "charge_description_ar",
+  "column_break_desc",
+  "charge_basis",
+  "percentage",
+  "percentage_on",
+  "charge_currency",
+  "amount",
+  "exchange_rate",
+  "base_amount",
+  "apply_to",
+  "distribute_based_on",
+  "account_head",
+  "section_accounts",
+  "debit_account",
+  "debit_from_document",
+  "column_break_accounts",
+  "credit_account",
+  "credit_from_document",
+  "section_party",
+  "party_type",
+  "party",
+  "column_break_party",
+  "party_side",
+  "section_dimensions",
+  "cost_center",
+  "column_break_dimensions",
+  "project",
+  "section_remarks",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "charge_description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "columns": 2,
+   "label": "Description",
+   "reqd": 1
+  },
+  {
+   "fieldname": "charge_description_ar",
+   "fieldtype": "Data",
+   "label": "Description (Arabic)"
+  },
+  {
+   "fieldname": "column_break_desc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "charge_basis",
+   "fieldtype": "Select",
+   "options": "Amount\nPercentage",
+   "default": "Amount",
+   "label": "Basis",
+   "columns": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "percentage",
+   "fieldtype": "Percent",
+   "label": "Percentage",
+   "depends_on": "eval:doc.charge_basis=='Percentage'",
+   "mandatory_depends_on": "eval:doc.charge_basis=='Percentage'"
+  },
+  {
+   "fieldname": "percentage_on",
+   "fieldtype": "Select",
+   "options": "\nNet Total\nGrand Total\nTotal Taxes and Charges",
+   "label": "Percentage On",
+   "depends_on": "eval:doc.charge_basis=='Percentage'",
+   "mandatory_depends_on": "eval:doc.charge_basis=='Percentage'",
+   "description": "Company-currency total of the source document."
+  },
+  {
+   "fieldname": "charge_currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "in_list_view": 1,
+   "columns": 1,
+   "description": "Defaults to company currency. Percentage lines use the document currency."
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "columns": 2,
+   "label": "Amount",
+   "reqd": 1,
+   "description": "In the line's currency.",
+   "read_only_depends_on": "eval:doc.charge_basis=='Percentage'",
+   "options": "charge_currency"
+  },
+  {
+   "fieldname": "exchange_rate",
+   "fieldtype": "Float",
+   "label": "Exchange Rate",
+   "precision": "9",
+   "description": "Line currency to company currency. Lines in company or document currency set this automatically."
+  },
+  {
+   "fieldname": "base_amount",
+   "fieldtype": "Currency",
+   "label": "Amount (Company Currency)",
+   "options": "Company:company:default_currency",
+   "read_only": 1,
+   "in_list_view": 1,
+   "columns": 2
+  },
+  {
+   "fieldname": "apply_to",
+   "fieldtype": "Select",
+   "options": "None\nTotal\nValuation\nValuation and Total",
+   "default": "None",
+   "label": "Add To",
+   "in_list_view": 1,
+   "columns": 1,
+   "reqd": 1,
+   "description": "None posts a standalone memo pair. Anything else adds the charge to the document's own Taxes and Charges table."
+  },
+  {
+   "fieldname": "distribute_based_on",
+   "fieldtype": "Select",
+   "options": "Amount\nQuantity",
+   "default": "Amount",
+   "label": "Distribute Based On",
+   "depends_on": "eval:doc.apply_to && doc.apply_to!='None'",
+   "mandatory_depends_on": "eval:doc.apply_to && doc.apply_to!='None'",
+   "description": "Amount spreads proportionally to item net amount; Quantity spreads per unit."
+  },
+  {
+   "fieldname": "account_head",
+   "fieldtype": "Link",
+   "options": "Account",
+   "label": "Account Head",
+   "depends_on": "eval:doc.apply_to && doc.apply_to!='None'",
+   "mandatory_depends_on": "eval:doc.apply_to && doc.apply_to!='None'",
+   "description": "Single account for the tax row. The counter leg is decided by ERPNext from the category."
+  },
+  {
+   "fieldname": "section_accounts",
+   "fieldtype": "Section Break",
+   "label": "Accounts"
+  },
+  {
+   "fieldname": "debit_account",
+   "fieldtype": "Link",
+   "options": "Account",
+   "in_list_view": 1,
+   "columns": 2,
+   "label": "Debit Account",
+   "depends_on": "eval:!doc.apply_to || doc.apply_to=='None'",
+   "mandatory_depends_on": "eval:!doc.apply_to || doc.apply_to=='None'",
+   "description": "Leave blank to use the document's account: receivable (selling) or expense (buying)."
+  },
+  {
+   "fieldname": "debit_from_document",
+   "fieldtype": "Check",
+   "label": "Debit from Document",
+   "read_only": 1,
+   "description": "Filled from the document on save; follows it if the party or items change."
+  },
+  {
+   "fieldname": "column_break_accounts",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "credit_account",
+   "fieldtype": "Link",
+   "options": "Account",
+   "in_list_view": 1,
+   "columns": 2,
+   "label": "Credit Account",
+   "depends_on": "eval:!doc.apply_to || doc.apply_to=='None'",
+   "mandatory_depends_on": "eval:!doc.apply_to || doc.apply_to=='None'",
+   "description": "Leave blank to use the document's account: revenue (selling) or payable (buying)."
+  },
+  {
+   "fieldname": "credit_from_document",
+   "fieldtype": "Check",
+   "label": "Credit from Document",
+   "read_only": 1,
+   "description": "Filled from the document on save; follows it if the party or items change."
+  },
+  {
+   "fieldname": "section_party",
+   "fieldtype": "Section Break",
+   "label": "Party",
+   "description": "Required only when one of the accounts is a Payable or Receivable account.",
+   "depends_on": "eval:!doc.apply_to || doc.apply_to=='None'"
+  },
+  {
+   "fieldname": "party_type",
+   "fieldtype": "Link",
+   "options": "Party Type",
+   "label": "Party Type"
+  },
+  {
+   "fieldname": "party",
+   "fieldtype": "Dynamic Link",
+   "options": "party_type",
+   "label": "Party",
+   "depends_on": "party_type"
+  },
+  {
+   "fieldname": "column_break_party",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "party_side",
+   "fieldtype": "Select",
+   "options": "\nDebit\nCredit",
+   "label": "Party Side",
+   "read_only": 1,
+   "description": "Set automatically from the party account."
+  },
+  {
+   "fieldname": "section_dimensions",
+   "fieldtype": "Section Break",
+   "label": "Dimensions"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "options": "Cost Center",
+   "label": "Cost Center"
+  },
+  {
+   "fieldname": "column_break_dimensions",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "options": "Project",
+   "label": "Project"
+  },
+  {
+   "fieldname": "section_remarks",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-11-03 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Charges",
+ "name": "NeoCharge Line",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,8 @@
+[pre_model_sync]
+
+[post_model_sync]
+neocharges.patches.v1_0.sync_charge_custom_fields
+neocharges.patches.v2_0.setup_item_discounts
+neocharges.patches.v2_1.discount_method
+neocharges.patches.v2_2.zatca_check
+neocharges.patches.v2_3.charge_currencies

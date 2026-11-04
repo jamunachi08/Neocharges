@@ -1,0 +1,181 @@
+Additional Charges,رسوم إضافية
+Apply Additional Charges,تطبيق الرسوم الإضافية
+Charge Lines,بنود الرسوم
+Charge Template,قالب الرسوم
+Charges Journal Entry,قيد اليومية للرسوم
+Debit Account,حساب مدين
+Credit Account,حساب دائن
+Description,الوصف
+Description (Arabic),الوصف بالعربية
+Amount,المبلغ
+Party Type,نوع الطرف
+Party,الطرف
+Party Side,جهة الطرف
+Cost Center,مركز التكلفة
+Project,المشروع
+Remarks,ملاحظات
+Enable Additional Charges,تفعيل الرسوم الإضافية
+Require Cost Center,إلزامية مركز التكلفة
+Default Cost Center,مركز التكلفة الافتراضي
+Enabled Document Types,أنواع المستندات المفعلة
+Document Type,نوع المستند
+Enabled,مفعل
+Auto Apply,تطبيق تلقائي
+Auto Submit JE,ترحيل القيد تلقائياً
+Default Template,القالب الافتراضي
+Template Name,اسم القالب
+Applicable For,ينطبق على
+Sales,المبيعات
+Purchase,المشتريات
+Both,كلاهما
+Disabled,معطل
+Default Amount,المبلغ الافتراضي
+Basis,الأساس
+Percentage,نسبة مئوية
+Percentage On,النسبة على
+Net Total,الإجمالي الصافي
+Grand Total,الإجمالي الكلي
+Total Taxes and Charges,إجمالي الضرائب والرسوم
+Posting Mode,طريقة الترحيل
+Journal Entry,قيد يومية
+Inline with Document GL,ضمن قيود المستند
+Add To,يضاف إلى
+Distribute Based On,التوزيع على أساس
+Account Head,الحساب الرئيسي
+Valuation,التقييم
+Valuation and Total,التقييم والإجمالي
+Total,الإجمالي
+Quantity,الكمية
+Amount,المبلغ
+None,لا شيء
+Item Discount,خصم الصنف
+Item Discounts,خصومات الأصناف
+Enable Item Discounts,تفعيل خصومات الأصناف
+Gross Rate,السعر قبل الخصم
+Discount 1 (%),الخصم 1 (%)
+Discount 2 (%),الخصم 2 (%)
+Applied to the balance after Discount 1.,يُطبق على الرصيد بعد الخصم 1.
+Extra Discount per Unit,خصم إضافي للوحدة
+Discount Reason,سبب الخصم
+Effective Discount (%),نسبة الخصم الفعلية (%)
+Discount per Unit,الخصم للوحدة
+Line Discount,خصم السطر
+Total Item Discount,إجمالي خصم الأصناف
+Rate before item discount. Defaults to the price list rate.,السعر قبل خصم الصنف. الافتراضي هو سعر قائمة الأسعار.
+NeoDiscount Reason,سبب الخصم
+Reason Name,اسم السبب
+ZATCA Reason Code,رمز السبب لدى زاتكا
+Reason Text (English),نص السبب (إنجليزي)
+Reason Text (Arabic),نص السبب (عربي)
+Maximum Discount (%),الحد الأقصى للخصم (%)
+Discount Accounts,حسابات الخصم
+Discount Account,حساب الخصم
+Discount Rounding,تقريب الخصم
+Allow 100% Line Discount,السماح بخصم 100% على السطر
+Require Discount Reason,إلزام سبب الخصم
+Default Discount Reason,سبب الخصم الافتراضي
+Item Discount Document Types,أنواع المستندات لخصم الأصناف
+Discount Authority,صلاحية الخصم
+Apply Authority To,تطبيق الصلاحية على
+Limits by Role,الحدود حسب الدور
+Selling documents,مستندات البيع
+All documents,جميع المستندات
+ZATCA,زاتكا
+ZATCA Integration,التكامل مع زاتكا
+Several Reasons on One Invoice,أكثر من سبب في فاتورة واحدة
+Use the reason with the largest discount,استخدام السبب صاحب أكبر خصم
+Block saving,منع الحفظ
+Reason Text Language,لغة نص السبب
+Block Tax-Table Charges on ZATCA Invoices,منع رسوم جدول الضرائب في فواتير زاتكا
+Line Discount Flag Field,حقل علامة خصم السطر
+Reason Code Field,حقل رمز السبب
+Reason Text Field,حقل نص السبب
+ZATCA Discount Preview,معاينة الخصم لزاتكا
+Discount Above Your Authority,الخصم يتجاوز صلاحيتك
+Item Discount Conflict,تعارض في خصم الصنف
+Base Amount,المبلغ الأساسي
+Allowance,الخصم
+Price Amount,السعر
+Line Extension,إجمالي السطر
+Check,التحقق
+ZATCA rounding,تقريب زاتكا
+"Row {0}: {1}","السطر {0}: {1}"
+set a Gross Rate first,أدخل السعر قبل الخصم أولاً
+discount percentages must be between 0 and 100,يجب أن تكون نسب الخصم بين 0 و 100
+the discounts add up to more than the gross rate,مجموع الخصومات أكبر من السعر قبل الخصم
+this discount brings the rate to zero,هذا الخصم يجعل السعر صفراً
+"{0}: select a Discount Reason.","{0}: اختر سبب الخصم."
+"{0}: set a Gross Rate before applying a discount.","{0}: أدخل السعر قبل الخصم قبل تطبيق الخصم."
+"{0}: the discounts add up to more than the gross rate.","{0}: مجموع الخصومات أكبر من السعر قبل الخصم."
+"Your discount authority is {0}%. These lines exceed it:","صلاحية الخصم لديك {0}%. هذه الأسطر تتجاوزها:"
+Ask a user with a higher limit to submit this document.,اطلب من مستخدم بصلاحية أعلى اعتماد هذا المستند.
+Discount Method,طريقة الخصم
+Keep Rate (discount on net amount),الإبقاء على السعر (الخصم على صافي المبلغ)
+Reduce Rate,تخفيض السعر
+Discount Amount (Line),مبلغ الخصم (للسطر)
+"Fixed amount off the whole line, after the other discounts.","مبلغ ثابت يخصم من السطر كاملاً بعد الخصومات الأخرى."
+Net Rate after Discount,صافي السعر بعد الخصم
+"Rate before item discount, taken from the row.","السعر قبل خصم الصنف، مأخوذ من السطر."
+Document-level allowance,خصم على مستوى الفاتورة
+Price Allowance,خصم السعر
+enter a rate first,أدخل السعر أولاً
+discount amounts cannot be negative,لا يمكن أن تكون مبالغ الخصم سالبة
+a line discount amount needs a quantity,مبلغ خصم السطر يحتاج إلى كمية
+the discounts add up to more than the line value,مجموع الخصومات أكبر من قيمة السطر
+this discount brings the line to zero,هذا الخصم يجعل قيمة السطر صفراً
+ZATCA Vendor,مزود تطبيق زاتكا
+Auto-detect,اكتشاف تلقائي
+Other,أخرى
+ZATCA Pre-Submit Check,فحص زاتكا قبل الاعتماد
+Check on Submit,الفحص عند الاعتماد
+Block on errors,المنع عند وجود أخطاء
+Warn only,تنبيه فقط
+Off,إيقاف
+ZATCA Check,فحص زاتكا
+ZATCA Checked On,تاريخ فحص زاتكا
+Not Checked,لم يُفحص
+Passed,ناجح
+Passed with Warnings,ناجح مع تنبيهات
+Failed,فشل
+ZATCA Check Failed,فشل فحص زاتكا
+Checking against ZATCA rules...,جارٍ الفحص وفق قواعد زاتكا...
+No problems found. The invoice is ready to submit.,لا توجد مشكلات. الفاتورة جاهزة للاعتماد.
+"{0} error(s) would stop this invoice at ZATCA. Fix them before submitting.","{0} خطأ سيمنع قبول الفاتورة لدى زاتكا. صحّحها قبل الاعتماد."
+"{0} warning(s). The invoice can be submitted; review them first.","{0} تنبيه. يمكن اعتماد الفاتورة بعد مراجعتها."
+Vendor,المزود
+Level,المستوى
+Area,المجال
+Finding,الملاحظة
+Rule,القاعدة
+Error,خطأ
+Warning,تنبيه
+Info,معلومة
+Seller,البائع
+Buyer,المشتري
+Lines,الأسطر
+VAT,ضريبة القيمة المضافة
+Discounts,الخصومات
+Returns,المرتجعات
+Charges,الرسوم
+Applicability,النطاق
+Invoice,الفاتورة
+"ZATCA Check: {0}","فحص زاتكا: {0}"
+Currency,العملة
+Exchange Rate,سعر الصرف
+Amount (Company Currency),المبلغ (بعملة الشركة)
+Total Charges (Company Currency),إجمالي الرسوم (بعملة الشركة)
+Company Currency,عملة الشركة
+Document Currency,عملة المستند
+Specific Currency,عملة محددة
+In the line's currency.,بعملة السطر.
+"Sum of the charge lines in company currency, whatever currency each line is in.","مجموع أسطر الرسوم بعملة الشركة أياً كانت عملة كل سطر."
+"Defaults to company currency. Percentage lines use the document currency.","الافتراضي عملة الشركة. أسطر النسبة المئوية تستخدم عملة المستند."
+Percentage lines are always in the document currency.,أسطر النسبة المئوية تكون دائماً بعملة المستند.
+"No exchange rate from {0} to {1}. Enter it on the line.","لا يوجد سعر صرف من {0} إلى {1}. أدخله في السطر."
+Debit from Document,المدين من المستند
+Credit from Document,الدائن من المستند
+"Filled from the document on save; follows it if the party or items change.","يُعبأ من المستند عند الحفظ ويتغير بتغير الطرف أو الأصناف."
+"Leave blank to use the document's account: receivable (selling) or expense (buying).","اتركه فارغاً لاستخدام حساب المستند: المدينون (المبيعات) أو المصروف (المشتريات)."
+"Leave blank to use the document's account: revenue (selling) or payable (buying).","اتركه فارغاً لاستخدام حساب المستند: الإيرادات (المبيعات) أو الدائنون (المشتريات)."
+"Blank: the document's receivable (selling) or expense (buying) account.","فارغ: حساب المدينين (المبيعات) أو المصروف (المشتريات) في المستند."
+"Blank: the document's revenue (selling) or payable (buying) account.","فارغ: حساب الإيرادات (المبيعات) أو الدائنين (المشتريات) في المستند."
