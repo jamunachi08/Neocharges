@@ -1,0 +1,52 @@
+{
+ "actions": [],
+ "creation": "2026-11-18 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "istable": 1,
+ "links": [],
+ "modified": "2026-11-18 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Charges",
+ "name": "NeoCharge VAT Account",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "in_list_view": 1,
+   "columns": 3
+  },
+  {
+   "fieldname": "input_vat_account",
+   "fieldtype": "Link",
+   "label": "Input VAT Account",
+   "options": "Account",
+   "in_list_view": 1,
+   "columns": 3,
+   "description": "Recoverable VAT on charges the company pays."
+  },
+  {
+   "fieldname": "output_vat_account",
+   "fieldtype": "Link",
+   "label": "Output VAT Account",
+   "options": "Account",
+   "in_list_view": 1,
+   "columns": 3,
+   "description": "VAT on charges billed to customers on non-ZATCA documents."
+  }
+ ],
+ "field_order": [
+  "company",
+  "input_vat_account",
+  "output_vat_account"
+ ]
+}

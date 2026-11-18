@@ -1,0 +1,181 @@
+{
+ "actions": [],
+ "creation": "2026-11-03 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "links": [],
+ "modified": "2026-11-03 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Discounts",
+ "owner": "Administrator",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "name": "NeoDiscount Reason",
+ "autoname": "field:reason_name",
+ "naming_rule": "By fieldname",
+ "allow_rename": 1,
+ "editable_grid": 1,
+ "track_changes": 1,
+ "search_fields": "reason_code,reason_text_en,reason_text_ar",
+ "title_field": "reason_name",
+ "show_title_field_in_link": 0,
+ "fields": [
+  {
+   "fieldname": "reason_name",
+   "fieldtype": "Data",
+   "label": "Reason Name",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "reason_code",
+   "fieldtype": "Select",
+   "label": "ZATCA Reason Code",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "options": "95\n100\n104\n103\n102\n105\n64\n60\n66\n67\n68\n65\n71\n70\n88\n41\n42\n62\n63",
+   "default": "95",
+   "description": "UNTDID 5189 allowance reason code. This is what the ZATCA invoice carries."
+  },
+  {
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reason_text_en",
+   "fieldtype": "Data",
+   "label": "Reason Text (English)",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "reason_text_ar",
+   "fieldtype": "Data",
+   "label": "Reason Text (Arabic)"
+  },
+  {
+   "fieldname": "max_discount_pct",
+   "fieldtype": "Percent",
+   "label": "Maximum Discount (%)",
+   "description": "Optional cap for any line using this reason. Zero means no cap."
+  },
+  {
+   "fieldname": "section_accounts",
+   "fieldtype": "Section Break",
+   "label": "Discount Accounts",
+   "description": "Used when Selling Settings → Enable Discount Accounting is on. Fills the item row's Discount Account if it is empty."
+  },
+  {
+   "fieldname": "accounts",
+   "fieldtype": "Table",
+   "label": "Accounts",
+   "options": "NeoDiscount Reason Account"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "print": 1,
+   "email": 1,
+   "export": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Sales Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "print": 1,
+   "email": 1,
+   "export": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Accounts Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "print": 1,
+   "email": 1,
+   "export": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Sales User",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "print": 1,
+   "email": 1,
+   "export": 1,
+   "report": 1,
+   "share": 0
+  },
+  {
+   "role": "Accounts User",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "print": 1,
+   "email": 1,
+   "export": 1,
+   "report": 1,
+   "share": 0
+  },
+  {
+   "role": "Purchase User",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "print": 1,
+   "email": 1,
+   "export": 1,
+   "report": 1,
+   "share": 0
+  },
+  {
+   "role": "Purchase Manager",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "print": 1,
+   "email": 1,
+   "export": 1,
+   "report": 1,
+   "share": 0
+  }
+ ],
+ "field_order": [
+  "reason_name",
+  "reason_code",
+  "disabled",
+  "column_break_1",
+  "reason_text_en",
+  "reason_text_ar",
+  "max_discount_pct",
+  "section_accounts",
+  "accounts"
+ ]
+}

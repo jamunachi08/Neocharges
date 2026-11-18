@@ -1,0 +1,32 @@
+[project]
+name = "neocharges"
+authors = [{ name = "Neotec Integrated Solutions", email = "support@neotec.sa" }]
+description = "Additional charges and ZATCA-compatible item-wise discounts for ERPNext"
+requires-python = ">=3.10"
+readme = "README.md"
+dynamic = ["version"]
+dependencies = [
+    # Frappe and ERPNext are installed and managed by bench from git.
+    # Never list them here — pip would look for them on PyPI and fail.
+]
+
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.module]
+name = "neocharges"
+
+# Read by bench and Frappe Cloud to validate app/bench compatibility.
+# This range must cover the Frappe version of the bench group you deploy to,
+# or the branch is rejected at deploy time.
+[tool.bench.frappe-dependencies]
+frappe = ">=15.0.0,<17.0.0"
+erpnext = ">=15.0.0,<17.0.0"
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.format]
+indent-style = "tab"
